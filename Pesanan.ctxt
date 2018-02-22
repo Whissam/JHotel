@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Pesanan
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Pesanan\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Pesanan()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pesanan\r\n
+comment2.params=
+comment2.target=double\ getBiaya()
+comment3.params=
+comment3.target=boolean\ getStatusDiproses()
+comment4.params=
+comment4.target=boolean\ getStatusSelesai()
+comment5.params=biaya
+comment5.target=void\ setBiaya(double)
+comment6.params=diproses
+comment6.target=void\ setStatusDiproses(boolean)
+comment7.params=diproses
+comment7.target=void\ setStatusSelesai(boolean)
+numComments=8
