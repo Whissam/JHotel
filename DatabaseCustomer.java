@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Class ini merupakan class yang digunakan untuk menambahkan atau mengurangi
+ * list customer
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Whisnu Samudra
+ * @version 1/3/2018
  */
 public class DatabaseCustomer
 {

@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class Pesanan here.
+ * Class ini merupakan Class yang digunakan untuk melihat status pesanan
+ * dan juga mengeset pesanan
+ * 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Whisnu Samudra
+ * @version 1/3/2018
  */
 public class Pesanan
 {
@@ -18,59 +20,105 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan()
+    public Pesanan(double biaya, Customer pelanggan)
     {
+        this.biaya=biaya;
+        this.pelanggan=pelanggan;
         // initialise instance variables
         
     }
-    
+    /**
+     * Method untuk mendapatkan biaya yang telah diset
+     *
+     * 
+     * @return    biaya type double
+     */
     public double getBiaya()
     {
-        return 0;
+        return biaya;
     }
-    
+    /**
+     * Method untuk mendapatkan pelanggan yang telah diset
+     *
+     * 
+     * @return    pelanggan type Customer
+     */
     public Customer getPelanggan()
     {
-        return null;
+        return pelanggan;
     }
-    
+    /**
+     * Method untuk mendapatkan status yang sedang diproses
+     *
+     * 
+     * @return    isDiproses type boolean
+     */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
-    
+    /**
+     * Method untuk mendapatkan status yang telah selesai
+     *
+     * 
+     * @return    isSelesai type boolean;
+     */
     public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
-    
+    /**
+     * Method  untuk mengeset biaya
+     *
+     * @param  biaya type double
+     * 
+     */
     public void setBiaya(double biaya)
     {
-        
+        this.biaya = biaya; //untuk mengeset biaya yang akan dibayar
     }
-    
+    /**
+     * Method untuk mengeset pelanggan
+     *
+     * @param  baru type Customer
+     * 
+     */
     public void setPelanggan(Customer baru)
     {
-    
+        pelanggan=baru;
     }
-    
+    /**
+     * Method untuk mengeset status diproses
+     *
+     * @param  diproses type Boolean
+     * 
+     */
     public void setStatusDiproses(boolean diproses)
     {
-    
+        isDiproses=diproses;
     }
-    
+    /**
+     * Method untuk mengeset status selesai
+     *
+     * @param  diproses type boolean
+     * 
+     */
     public void setStatusSelesai(boolean diproses)
     {
+        isSelesai=diproses;
     }
-    
-    
+    /**
+     * Method untuk mencetak biaya
+     *
+     * @param  biaya type double
+     * 
+     */
+    public void printData(double biaya)
+    {
+        System.out.print(biaya);
+    }    
    
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+    
     
 }
