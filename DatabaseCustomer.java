@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Class ini merupakan class yang digunakan untuk menambahkan atau mengurangi
+ * list customer
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Whisnu Samudra
+ * @version 1/3/2018
  */
 public class DatabaseCustomer
 {
@@ -13,7 +14,7 @@ public class DatabaseCustomer
     /**
      * Constructor for objects of class DatabaseCustomer
      */
-    public boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru)
     {
         return false;// initialise instance variables
         

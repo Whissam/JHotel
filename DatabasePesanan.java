@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * Class ini merupakan class yang digunakan untuk menambahkan atau mengurangi
+ * data pada list pesanan
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Whisnu Samudra
+ * @version 1/3/2018
  */
 public class DatabasePesanan
 {
