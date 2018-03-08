@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+#BlueJ class context
+comment0.target=Customer
+comment0.text=\r\n\ Class\ ini\ merupakan\ class\ yang\ digunakan\ untuk\ mengeset\ data\ Customer\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
+comment1.params=id\ nama
+comment1.target=Customer(int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Customer\r\n
+comment2.params=
+comment2.target=int\ getID()
+comment2.text=\r\n\ Method\ untuk\ mendapatkan\ ID\ yang\ telah\ diset\r\n\r\n\ \ \r\n\ @return\ \ \ \ id\ type\ integer\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNama()
+comment3.text=\r\n\ Method\ untuk\ mendapatkan\ nama\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ String\ type\ nama\r\n
+comment4.params=id
+comment4.target=void\ setID(int)
+comment4.text=\r\n\ Method\ untuk\ mengeset\ ID\r\n\r\n\ @param\ \ int\ id\r\n\ \r\n
+comment5.params=nama
+comment5.target=void\ setNama(java.lang.String)
+comment5.text=\r\n\ Method\ untuk\ mengeset\ nama\r\n\r\n\ @param\ \ String\ nama\r\n\ \r\n
+comment6.params=
+comment6.target=void\ printData()
+comment6.text=\r\n\ Method\ untuk\ mencetak\ nama\r\n\r\n\ @param\ \ String\ nama\r\n\ \r\n
+numComments=7
+=======
 #BlueJ class context
 comment0.target=Customer
 comment0.text=\r\n\ Class\ ini\ merupakan\ class\ yang\ digunakan\ untuk\ mengeset\ data\ Customer\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
@@ -20,3 +44,4 @@ comment6.params=nama
 comment6.target=void\ printData(java.lang.String)
 comment6.text=\r\n\ Method\ untuk\ mencetak\ nama\r\n\r\n\ @param\ \ String\ nama\r\n\ \r\n
 numComments=7
+>>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c

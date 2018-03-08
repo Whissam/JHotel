@@ -1,3 +1,43 @@
+<<<<<<< HEAD
+#BlueJ class context
+comment0.target=Pesanan
+comment0.text=\r\n\ Class\ ini\ merupakan\ Class\ yang\ digunakan\ untuk\ melihat\ status\ pesanan\r\n\ dan\ juga\ mengeset\ pesanan\r\n\ \r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
+comment1.params=biaya\ pelanggan
+comment1.target=Pesanan(double,\ Customer)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pesanan\r\n
+comment10.params=
+comment10.target=void\ printData()
+comment10.text=\r\n\ Method\ untuk\ mencetak\ biaya\r\n\r\n\ @param\ \ biaya\ type\ double\r\n\ \r\n
+comment11.params=kamar
+comment11.target=void\ setRoom(Room)
+comment12.params=
+comment12.target=Room\ getRoom()
+comment2.params=
+comment2.target=double\ getBiaya()
+comment2.text=\r\n\ Method\ untuk\ mendapatkan\ biaya\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ biaya\ type\ double\r\n
+comment3.params=
+comment3.target=Customer\ getPelanggan()
+comment3.text=\r\n\ Method\ untuk\ mendapatkan\ pelanggan\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ pelanggan\ type\ Customer\r\n
+comment4.params=
+comment4.target=boolean\ getStatusDiproses()
+comment4.text=\r\n\ Method\ untuk\ mendapatkan\ status\ yang\ sedang\ diproses\r\n\r\n\ \r\n\ @return\ \ \ \ isDiproses\ type\ boolean\r\n
+comment5.params=
+comment5.target=boolean\ getStatusSelesai()
+comment5.text=\r\n\ Method\ untuk\ mendapatkan\ status\ yang\ telah\ selesai\r\n\r\n\ \r\n\ @return\ \ \ \ isSelesai\ type\ boolean;\r\n
+comment6.params=biaya
+comment6.target=void\ setBiaya(double)
+comment6.text=\r\n\ Method\ \ untuk\ mengeset\ biaya\r\n\r\n\ @param\ \ biaya\ type\ double\r\n\ \r\n
+comment7.params=baru
+comment7.target=void\ setPelanggan(Customer)
+comment7.text=\r\n\ Method\ untuk\ mengeset\ pelanggan\r\n\r\n\ @param\ \ baru\ type\ Customer\r\n\ \r\n
+comment8.params=diproses
+comment8.target=void\ setStatusDiproses(boolean)
+comment8.text=\r\n\ Method\ untuk\ mengeset\ status\ diproses\r\n\r\n\ @param\ \ diproses\ type\ Boolean\r\n\ \r\n
+comment9.params=diproses
+comment9.target=void\ setStatusSelesai(boolean)
+comment9.text=\r\n\ Method\ untuk\ mengeset\ status\ selesai\r\n\r\n\ @param\ \ diproses\ type\ boolean\r\n\ \r\n
+numComments=13
+=======
 #BlueJ class context
 comment0.target=Pesanan
 comment0.text=\r\n\ Class\ ini\ merupakan\ Class\ yang\ digunakan\ untuk\ melihat\ status\ pesanan\r\n\ dan\ juga\ mengeset\ pesanan\r\n\ \r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
@@ -32,3 +72,4 @@ comment9.params=diproses
 comment9.target=void\ setStatusSelesai(boolean)
 comment9.text=\r\n\ Method\ untuk\ mengeset\ status\ selesai\r\n\r\n\ @param\ \ diproses\ type\ boolean\r\n\ \r\n
 numComments=11
+>>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c

@@ -67,9 +67,15 @@ public class Customer
      * @param  String nama
      * 
      */
+<<<<<<< HEAD
+    public void printData()
+    {
+        System.out.println(nama);
+=======
     public void printData(String nama)
     {
         System.out.print(nama);
+>>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c
     }
     
 

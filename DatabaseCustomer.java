@@ -14,7 +14,7 @@ public class DatabaseCustomer
     /**
      * Constructor for objects of class DatabaseCustomer
      */
-    public boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru)
     {
         return false;// initialise instance variables
         

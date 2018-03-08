@@ -16,6 +16,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
 
     /**
      * Constructor for objects of class Pesanan
@@ -113,6 +114,12 @@ public class Pesanan
      * @param  biaya type double
      * 
      */
+<<<<<<< HEAD
+    public void printData()
+    {
+        System.out.println(biaya);
+    }    
+=======
     public void printData(double biaya)
     {
         System.out.print(biaya);
@@ -120,5 +127,15 @@ public class Pesanan
    
 
     
+>>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c
     
+    public void setRoom(Room kamar)
+    {
+        
+    }
+    
+    public Room getRoom()
+    {
+        return kamar;
+    }
 }

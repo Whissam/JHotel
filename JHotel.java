@@ -13,8 +13,19 @@ public class JHotel
     /**
      * Constructor for objects of class JHotel
      */
-    public void main(String[] args)
+    public static void main(String[] args)
     {
+        /*
+        Customer tes=new Customer(1 ,"wew"); membuat objek 
+        Lokasi tes1=new Lokasi (112, 234, "FTUI");
+        Hotel testes=new Hotel ("Wow", tes1, 2);
+        Pesanan tustus=new Pesanan(334, tes);
+        tes.printData(); manggil method
+        tes.setNama("wow"); manggil  method merubah nama
+        tes.printData(); manggil method
+        tustus.printData(); manggil method
+        DatabaseCustomer.addCustomer(tes); manggil method dari class yang belum dibuat objeknya
+        */
     }
     
     public JHotel()
