@@ -3,7 +3,7 @@
  * Write a description of class Administrasi here.
  *
  * @author Whisnu Samudra
- * @version * Maret 2018
+ * @version 1 Maret 2018
  */
 public class Administrasi
 {
@@ -25,55 +25,56 @@ public class Administrasi
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void pesananDitugaskan(Pesanan pesan, Room kamar)
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
         // put your code here
         
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
-        
+        roomAmbilPesanan(pesan, kamar);
         
     }
-    public void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.BOOKED);
         kamar.setPesanan(pesan);
         
         
     }
-    public void roomLepasPesanan(Room kamar)
+    public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.VACANT);
         kamar.setPesanan(null);
     }
-    public void pesananDibatalkan(Room kamar)
+    public static void pesananDibatalkan(Room kamar)
     {
-        Pesanan pesan= kamar.getPesanan();
+        kamar.getPesanan().setStatusSelesai(false);
+        kamar.getPesanan().setStatusDiproses(false);
+        kamar.getPesanan().setRoom(null);
+        roomLepasPesanan(kamar);
+    }
+    public static void pesananSelesai(Room kamar)
+    {
+        kamar.getPesanan().setStatusSelesai(true);
+        kamar.getPesanan().setStatusDiproses(false);
+        kamar.getPesanan().setRoom(null);
+        roomLepasPesanan(kamar);
+        
+    }
+    public static void pesananDibatalkan(Pesanan pesan)
+    {
+        roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        pesan.setRoom(null);   
     }
-    public void pesananSelesai(Room kamar)
+    public static void pesananSelesai(Pesanan pesan)
     {
-        Pesanan pesan= kamar.getPesanan();
+        roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
-    }
-    public void pesananDibatalkan(Pesanan pesan)
-    {
-        Room kamar= pesan.getRoom();
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
-    }
-    public void pesananSelesai(Pesanan pesan)
-    {
-        Room kamar=pesan.getRoom();
-        pesan.setStatusSelesai(true);
-        pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        pesan.setRoom(null);   
     }
         
 }

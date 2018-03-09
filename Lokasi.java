@@ -91,9 +91,14 @@ public class Lokasi
      * @param  deskripsiLokasi type String
      * 
      */
-    public void printData(String deskripsiLokasi)
+    public void printData()
     {
-        System.out.print(deskripsiLokasi); //mencetak deskripsi lokasi
+        
+        System.out.println("Koordinat X: " + x_coord);
+        System.out.println("Koordinat Y: " + y_coord);
+        System.out.println("Deskripsi: " + deskripsiLokasi);
+        //mencetak deskripsi lokasi
     }
+    
     
 }

@@ -8,13 +8,19 @@
 public enum TipeKamar
 {
     // instance variables - replace the example below with your own
-    SINGLE, DOUBLE, PREMIUM;
-    public String toString()
-    {
-        return null;
+    SINGLE("Single"), DOUBLE("Double"), PREMIUM("Premium");
+    public String element;
+    
+    TipeKamar(String element){
+        this.element=element;
     }
     
+     public String toString()
+     {
+        return element;
+    }
 }
+    
 
 
     

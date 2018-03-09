@@ -92,9 +92,14 @@ public class Hotel
      * @param  nama type String
      * 
      */
-    public void printData(String nama)
+    public void printData()
     {
-        System.out.print(nama);
+        
+        System.out.println("Nama Hotel: " + nama);
+        lokasi.printData();
+        System.out.println("Bintang: " + bintang);
     }
+    
+   
     
 }

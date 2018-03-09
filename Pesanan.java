@@ -13,7 +13,7 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -48,6 +48,17 @@ public class Pesanan
     {
         return pelanggan;
     }
+    
+    public String getNamaPelanggan()
+    {
+        return nama_pelanggan;
+    }
+    
+    public TipeKamar getTipeKamar()
+    {
+        return tipe_kamar;
+    }
+    
     /**
      * Method untuk mendapatkan status yang sedang diproses
      *
@@ -68,6 +79,12 @@ public class Pesanan
     {
         return isSelesai;
     }
+    
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
     /**
      * Method  untuk mengeset biaya
      *
@@ -84,10 +101,21 @@ public class Pesanan
      * @param  baru type Customer
      * 
      */
-    public void setPelanggan(Customer baru)
+    public void setPelanggan(Customer pelanggan)
     {
-        pelanggan=baru;
+        this.pelanggan=pelanggan;
     }
+    
+    public void setNamaPelanggan(String nama_pelanggan)
+    {
+        this.nama_pelanggan=nama_pelanggan;
+    }
+    
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {
+        this.tipe_kamar=tipe_kamar;
+    }
+    
     /**
      * Method untuk mengeset status diproses
      *
@@ -104,38 +132,29 @@ public class Pesanan
      * @param  diproses type boolean
      * 
      */
-    public void setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean selesai)
     {
-        isSelesai=diproses;
+        isSelesai=selesai;
     }
+    
+    public void setRoom(Room kamar)
+    {
+     this.kamar=kamar;
+    }
+    
     /**
      * Method untuk mencetak biaya
      *
      * @param  biaya type double
      * 
      */
-<<<<<<< HEAD
+
     public void printData()
     {
-        System.out.println(biaya);
-    }    
-=======
-    public void printData(double biaya)
-    {
-        System.out.print(biaya);
-    }    
-   
-
-    
->>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c
-    
-    public void setRoom(Room kamar)
-    {
         
-    }
-    
-    public Room getRoom()
-    {
-        return kamar;
-    }
+        pelanggan.printData();
+        System.out.println("Tipe Kamar: " + tipe_kamar);
+        System.out.println("Status layanan diproses: " + isDiproses);
+        System.out.println("Status layanan selesai: " + isSelesai);
+    }        
 }

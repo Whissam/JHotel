@@ -20,9 +20,15 @@ public class Room
     /**
      * Constructor for objects of class Room
      */
-    public Room()
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer
+    customer, double dailyTariff, StatusKamar status_kamar)
     {
-        // initialise instance variables
+        this.hotel=hotel;
+        this.nomor_kamar=nomor_kamar;
+        this.isAvailable=isAvailable;
+        this.customer=customer;
+        this.dailyTariff=dailyTariff;
+        this.status_kamar=status_kamar;// initialise instance variables
         
     }
 
@@ -115,7 +121,14 @@ public class Room
     
     public void printData()
     {
+        
+        hotel.printData();
+        System.out.println("Nomor Kamar: " + nomor_kamar);
+        System.out.println("Tersedia: " + isAvailable);
+        customer.printData();
+        System.out.println("Harga: " + dailyTariff);
+        System.out.println("Status Kamar: " + status_kamar);
     }
     
-        
+    
 }

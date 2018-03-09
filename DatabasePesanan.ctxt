@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #BlueJ class context
 comment0.target=DatabasePesanan
 comment0.text=\r\n\ Class\ ini\ merupakan\ class\ yang\ digunakan\ untuk\ menambahkan\ atau\ mengurangi\r\n\ data\ pada\ list\ pesanan\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
@@ -16,22 +15,3 @@ comment5.target=java.lang.String[]\ getPesananDatabase()
 comment6.params=pesan
 comment6.target=void\ pesananDibatalkan(Pesanan)
 numComments=7
-=======
-#BlueJ class context
-comment0.target=DatabasePesanan
-comment0.text=\r\n\ Class\ ini\ merupakan\ class\ yang\ digunakan\ untuk\ menambahkan\ atau\ mengurangi\r\n\ data\ pada\ list\ pesanan\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
-comment1.params=
-comment1.target=DatabasePesanan()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabasePesanan\r\n
-comment2.params=baru
-comment2.target=boolean\ addPesanan(Pesanan)
-comment3.params=pesan
-comment3.target=boolean\ removePesanan(Pesanan)
-comment4.params=cust
-comment4.target=Pesanan\ getPesanan(Customer)
-comment5.params=
-comment5.target=java.lang.String[]\ getPesananDatabase()
-comment6.params=pesan
-comment6.target=void\ pesananDibatalkan(Pesanan)
-numComments=7
->>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c

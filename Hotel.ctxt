@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #BlueJ class context
 comment0.target=Hotel
 comment0.text=\r\n\ Class\ ini\ merupakan\ class\ untuk\ mengeset\ informasi\ tentang\ hotel\ seperti\r\n\ nama,\ lokasi,\ dan\ bintang\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
@@ -23,37 +22,7 @@ comment6.text=\r\n\ Method\ untuk\ mengeset\ lokasi\r\n\r\n\ @param\ \ lokasi\ t
 comment7.params=bintang
 comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ Method\ untuk\ mengeset\ bintang\r\n\r\n\ @param\ \ bintang\ type\ int\r\n\ \r\n
-comment8.params=nama
-comment8.target=void\ printData(java.lang.String)
+comment8.params=
+comment8.target=void\ printData()
 comment8.text=\r\n\ Method\ untuk\ mencetak\ nama\r\n\r\n\ @param\ \ nama\ type\ String\r\n\ \r\n
 numComments=9
-=======
-#BlueJ class context
-comment0.target=Hotel
-comment0.text=\r\n\ Class\ ini\ merupakan\ class\ untuk\ mengeset\ informasi\ tentang\ hotel\ seperti\r\n\ nama,\ lokasi,\ dan\ bintang\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1/3/2018\r\n
-comment1.params=nama\ lokasi\ bintang
-comment1.target=Hotel(java.lang.String,\ Lokasi,\ int)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hotel\r\n
-comment2.params=
-comment2.target=int\ getBintang()
-comment2.text=\r\n\ Method\ untuk\ mendapatkan\ bintang\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ bintang\ type\ int\r\n
-comment3.params=
-comment3.target=java.lang.String\ getNama()
-comment3.text=\r\n\ Method\ untuk\ mendapatkan\ nama\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ nama\ type\ String\r\n
-comment4.params=
-comment4.target=Lokasi\ getLokasi()
-comment4.text=\r\n\ Method\ untuk\ mendapatkan\ lokasi\ yang\ telah\ diset\r\n\r\n\ \r\n\ @return\ \ \ \ lokasi\ type\ Lokasi\r\n
-comment5.params=nama
-comment5.target=void\ setNama(java.lang.String)
-comment5.text=\r\n\ Method\ untuk\ mengeset\ nama\r\n\r\n\ @param\ \ nama\ type\ String\r\n\ \r\n
-comment6.params=lokasi
-comment6.target=void\ setLokasi(Lokasi)
-comment6.text=\r\n\ Method\ untuk\ mengeset\ lokasi\r\n\r\n\ @param\ \ lokasi\ type\ Lokasi\r\n\ \r\n
-comment7.params=bintang
-comment7.target=void\ setBintang(int)
-comment7.text=\r\n\ Method\ untuk\ mengeset\ bintang\r\n\r\n\ @param\ \ bintang\ type\ int\r\n\ \r\n
-comment8.params=nama
-comment8.target=void\ printData(java.lang.String)
-comment8.text=\r\n\ Method\ untuk\ mencetak\ nama\r\n\r\n\ @param\ \ nama\ type\ String\r\n\ \r\n
-numComments=9
->>>>>>> f21ae197e1ccf6bbd26286fdfc8a16f01552c82c

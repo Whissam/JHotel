@@ -7,10 +7,16 @@
  */
 public enum StatusKamar
 {
-    BOOKED, PROCESSED, VACANT;
+    BOOKED("Booked"), PROCESSED("Processed"), VACANT("Vacant");
     
-    public String toString()
-    {
-        return null;
+    private String element;
+    
+    StatusKamar(String element){
+        this.element=element;
+    }
+    
+     public String toString()
+     {
+        return element;
     }
 }

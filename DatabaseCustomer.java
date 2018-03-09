@@ -27,7 +27,7 @@ public class DatabaseCustomer
     
     public String[] getCustomerDatabase()
     {
-        return null;
+        return list_customer;
     }
 
     /**
