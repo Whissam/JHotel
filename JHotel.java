@@ -18,35 +18,40 @@ public class JHotel
         Lokasi tes1=new Lokasi(11, 12, "So far away");
         Hotel tes=new Hotel("Hotel Planet", tes1, 5);
         Customer tes2=new Customer(1, "Whisnu Samudra");
-        Room kamar=new Room(tes, "101A", true, tes2, 500000, StatusKamar.BOOKED);
-        Pesanan order=new Pesanan(500000, tes2);
-        System.out.println("Welcome to JHotel");
+        Room tis= new SingleRoom(tes, "221B", true, StatusKamar.BOOKED);
+        tis.setDailyTariff(100000);
+        Pesanan tus=new Pesanan (7, tes2, tis);
         tes1.printData();
         tes2.printData();
         tes.printData();
-        System.out.println("====================METHOD 1====================");
-        Administrasi.pesananDitugaskan(order, kamar);
-        order.printData();
-        kamar.printData();
-        System.out.println("====================METHOD 2====================");
-        Administrasi.pesananDibatalkan(kamar);
-        order.printData();
-        kamar.printData();
-        System.out.println("====================METHOD 3====================");
-        Administrasi.pesananDitugaskan(order, kamar);
-        Administrasi.pesananSelesai(kamar);
-        order.printData();
-        kamar.printData();
-        System.out.println("====================METHOD 4====================");
-        Administrasi.pesananDitugaskan(order, kamar);
-        Administrasi.pesananDibatalkan(order);
-        order.printData();
-        kamar.printData();
-        System.out.println("====================METHOD 5====================");
-        Administrasi.pesananDitugaskan(order, kamar);
-        Administrasi.pesananSelesai(order);
-        order.printData();
-        kamar.printData();
+        Administrasi.pesananDitugaskan(tus, tis);
+        tus.printData();
+        tis.printData();
+        
+        if(tis instanceof DoubleRoom)
+        {
+            System.out.println("Benar Double Room");
+        }
+        else 
+        {
+            System.out.println("Salah, bukan Double Room");
+        }
+        
+        Room tis2 = new DoubleRoom (tes, "221C", true, StatusKamar.BOOKED);
+        tis2.setDailyTariff(200000);
+        Pesanan tos = new Pesanan (10, tes2, tis2);
+        Administrasi.pesananDitugaskan(tos, tis2);
+        tis2.printData();
+        tos.printData();
+        
+        if(tis2 instanceof DoubleRoom)
+        {
+            System.out.println("Benar Double Room");
+        }
+        else 
+        {
+            System.out.println("Salah, bukan Double Room");
+        }
         /*
         Customer tes=new Customer(1 ,"wew"); membuat objek 
         Lokasi tes1=new Lokasi (112, 234, "FTUI");

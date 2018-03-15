@@ -11,9 +11,8 @@ public class Pesanan
 {
     // instance variables - replace the example below with your own
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -21,10 +20,12 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-        this.biaya=biaya;
+        this.jumlahHari=jumlahHari;
         this.pelanggan=pelanggan;
+        this.kamar=kamar;
+        this.biaya = jumlahHari * getRoom().getDailyTariff();
         // initialise instance variables
         
     }
@@ -38,6 +39,12 @@ public class Pesanan
     {
         return biaya;
     }
+    
+    public double getJumlahHari()
+    {
+        return jumlahHari;
+    }
+    
     /**
      * Method untuk mendapatkan pelanggan yang telah diset
      *
@@ -49,15 +56,7 @@ public class Pesanan
         return pelanggan;
     }
     
-    public String getNamaPelanggan()
-    {
-        return nama_pelanggan;
-    }
-    
-    public TipeKamar getTipeKamar()
-    {
-        return tipe_kamar;
-    }
+   
     
     /**
      * Method untuk mendapatkan status yang sedang diproses
@@ -93,8 +92,15 @@ public class Pesanan
      */
     public void setBiaya(double biaya)
     {
-        this.biaya = biaya; //untuk mengeset biaya yang akan dibayar
+        
+        biaya = getBiaya() * getRoom().getDailyTariff();
     }
+    
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari; //untuk mengeset biaya yang akan dibayar
+    }
+    
     /**
      * Method untuk mengeset pelanggan
      *
@@ -106,16 +112,7 @@ public class Pesanan
         this.pelanggan=pelanggan;
     }
     
-    public void setNamaPelanggan(String nama_pelanggan)
-    {
-        this.nama_pelanggan=nama_pelanggan;
-    }
-    
-    public void setTipeKamar(TipeKamar tipe_kamar)
-    {
-        this.tipe_kamar=tipe_kamar;
-    }
-    
+        
     /**
      * Method untuk mengeset status diproses
      *
@@ -152,9 +149,10 @@ public class Pesanan
     public void printData()
     {
         
-        pelanggan.printData();
-        System.out.println("Tipe Kamar: " + tipe_kamar);
+        System.out.println("Nama: " + getPelanggan().getNama());
         System.out.println("Status layanan diproses: " + isDiproses);
         System.out.println("Status layanan selesai: " + isSelesai);
+        System.out.println("Jumlah Hari: " + jumlahHari);
+        System.out.println("Biaya: " +getBiaya());
     }        
 }
