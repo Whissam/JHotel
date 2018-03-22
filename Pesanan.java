@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * Class ini merupakan Class yang digunakan untuk melihat status pesanan
  * dan juga mengeset pesanan
@@ -16,6 +16,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
 
     /**
      * Constructor for objects of class Pesanan
@@ -84,6 +85,11 @@ public class Pesanan
         return kamar;
     }
     
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /**
      * Method  untuk mengeset biaya
      *
@@ -139,6 +145,10 @@ public class Pesanan
      this.kamar=kamar;
     }
     
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan=tanggalPesan;
+    }
     /**
      * Method untuk mencetak biaya
      *

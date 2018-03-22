@@ -1,3 +1,4 @@
+import java.util.regex.Matcher;
 
 /**
  * Write a description of class JHotel here.
@@ -52,6 +53,16 @@ public class JHotel
         {
             System.out.println("Salah, bukan Double Room");
         }
+        
+         Customer pelanggan = new Customer(2, "Samudra");
+         Customer cust = new Customer(3, "Sam");
+         Customer pel = new Customer(4, "Whis");
+         pelanggan.setEmail("e.t.d@");
+         cust.setEmail("Ee_.td@ui.ac.id");
+         pel.setEmail("whisnusamudra.modul5@netlab.com");
+         
+         
+        
         /*
         Customer tes=new Customer(1 ,"wew"); membuat objek 
         Lokasi tes1=new Lokasi (112, 234, "FTUI");

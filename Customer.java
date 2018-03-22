@@ -1,4 +1,9 @@
-
+import java.util.Date;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.*;
 /**
  * Class ini merupakan class yang digunakan untuk mengeset data Customer
  *
@@ -10,17 +15,28 @@ public class Customer
     // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
 
     /**
      * Constructor for objects of class Customer
      */
     
     
-    public Customer (int id, String nama)
+    public Customer (int id, String nama, int year, int month, int date)
     {
         this.id=id;
         this.nama=nama;
+        this.dob=new GregorianCalendar(year,month,date).getTime();
     }
+    
+     public Customer (int id, String nama,Date dob)
+    {
+        this.id=id;
+        this.nama=nama;
+        this.dob=dob;
+    }
+    
     /**
      * Method untuk mendapatkan ID yang telah diset
      *
@@ -41,6 +57,18 @@ public class Customer
     {
         return nama;
     }
+    
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public Date getDOB()
+    {
+       System.out.println("DOB: " +dob.getDate() +" " +dob.getMonth() +" " +dob.getYear());
+       return dob;
+    }
+    
     /**
      * Method untuk mengeset ID
      *
@@ -61,6 +89,19 @@ public class Customer
     {
         this.nama=nama;
     }
+    
+    public void setEmail(String email)
+    {
+        Pattern ptr = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        System.out.println(email + " is " + (ptr.matcher(email).matches() ? "valid" : "invalid"));
+    
+    }
+    
+    public void setDOB(Date dob)
+    {
+        this.dob=dob;
+    }
+    
     /**
      * Method untuk mencetak nama
      *
