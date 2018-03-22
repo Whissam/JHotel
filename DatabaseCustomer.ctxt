@@ -7,5 +7,5 @@ comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseCustomer\r\n
 comment2.params=id
 comment2.target=boolean\ removeCustomer(int)
 comment3.params=
-comment3.target=java.lang.String[]\ getCustomerDatabase()
+comment3.target=Customer\ getCustomerDatabase()
 numComments=4

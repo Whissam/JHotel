@@ -9,7 +9,7 @@
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private String[] list_pesanan;
+    private Pesanan list_pesanan;
 
     /**
      * Constructor for objects of class DatabasePesanan
@@ -30,7 +30,7 @@ public class DatabasePesanan
         return false;
     }
     
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         return null;
     }

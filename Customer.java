@@ -1,9 +1,7 @@
-import java.util.Date;
+import java.util.*;
+import java.text.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.*;
 /**
  * Class ini merupakan class yang digunakan untuk mengeset data Customer
  *
@@ -65,7 +63,8 @@ public class Customer
     
     public Date getDOB()
     {
-       System.out.println("DOB: " +dob.getDate() +" " +dob.getMonth() +" " +dob.getYear());
+       SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+       System.out.println("DOB: " + dateFormat.format(dob));
        return dob;
     }
     
@@ -109,11 +108,27 @@ public class Customer
      * 
      */
 
-    public void printData()
+    public String toString()
     {
-        
-        System.out.println("ID: " + id);
-        System.out.println("Pelanggan: " + nama);
+        if(DatabasePesanan.getPesanan(this)==null)
+        {
+            System.out.println("\nCusomter ID : " +id +
+            "\nName: " + nama +
+            "\nEmail: " + email +
+             getDOB());
+             return null;
+            }
+             else
+             {
+             System.out.println("\nCusomter ID : " +id +
+            "\nName: " + nama +
+            "\nEmail: " + email +
+             getDOB() +
+             "Booking order is in progress");
+             return null;
+            }
+                 
+             
     }
 
     

@@ -9,7 +9,7 @@
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private String[] list_customer;
+    private Customer list_customer;
 
     /**
      * Constructor for objects of class DatabaseCustomer
@@ -25,7 +25,7 @@ public class DatabaseCustomer
         return false;
     }
     
-    public String[] getCustomerDatabase()
+    public Customer getCustomerDatabase()
     {
         return list_customer;
     }

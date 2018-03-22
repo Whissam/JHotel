@@ -105,7 +105,7 @@ public abstract class Room
     public void printData()
     {
         
-        hotel.printData();
+        
         System.out.println("Nomor Kamar: " + nomor_kamar);
         System.out.println("Tersedia: " + isAvailable);
         System.out.println("Tipe Kamar: " +getTipeKamar());

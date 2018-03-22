@@ -23,6 +23,6 @@ comment7.params=bintang
 comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ Method\ untuk\ mengeset\ bintang\r\n\r\n\ @param\ \ bintang\ type\ int\r\n\ \r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Method\ untuk\ mencetak\ nama\r\n\r\n\ @param\ \ nama\ type\ String\r\n\ \r\n
 numComments=9

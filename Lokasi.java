@@ -51,7 +51,7 @@ public class Lokasi
      * 
      * @return    deskripsiLokasi type String
      */
-    public String getDiskripsi()
+    public String getDeskripsi()
     {
         return deskripsiLokasi;
     }
@@ -81,7 +81,7 @@ public class Lokasi
      * @param  deskripsi type String
      * 
      */
-    public void setDiskripsi (String deskripsi)
+    public void setDeskripsi (String deskripsi)
     {
         deskripsiLokasi=deskripsi;
     }
@@ -91,13 +91,14 @@ public class Lokasi
      * @param  deskripsiLokasi type String
      * 
      */
-    public void printData()
+   
+    
+    public String toString()
     {
-        
-        System.out.println("Koordinat X: " + x_coord);
-        System.out.println("Koordinat Y: " + y_coord);
-        System.out.println("Deskripsi: " + deskripsiLokasi);
-        //mencetak deskripsi lokasi
+        return( "\nLokasi" +
+        "\nKoordinat X: " + x_coord +
+        "\nKoordinat Y: " + y_coord +
+        "\nDeskripsi Lokasi: " + deskripsiLokasi);
     }
     
     

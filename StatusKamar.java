@@ -11,6 +11,10 @@ public enum StatusKamar
     
     private String element;
     
+    StatusKamar()
+    {
+    }
+    
     StatusKamar(String element){
         this.element=element;
     }

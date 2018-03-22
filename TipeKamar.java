@@ -11,6 +11,10 @@ public enum TipeKamar
     SINGLE("Single"), DOUBLE("Double"), PREMIUM("Premium");
     public String element;
     
+    TipeKamar()
+    {
+    }
+    
     TipeKamar(String element){
         this.element=element;
     }

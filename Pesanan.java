@@ -1,4 +1,5 @@
-import java.util.Date;
+import java.util.*;
+import java.text.*;
 /**
  * Class ini merupakan Class yang digunakan untuk melihat status pesanan
  * dan juga mengeset pesanan
@@ -21,15 +22,24 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int year, int month, int date)
     {
         this.jumlahHari=jumlahHari;
         this.pelanggan=pelanggan;
         this.kamar=kamar;
         this.biaya = jumlahHari * getRoom().getDailyTariff();
+        this.tanggalPesan=new GregorianCalendar(year,month,date).getTime();
         // initialise instance variables
         
     }
+     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,Date tanggalPesan)
+     {
+        this.jumlahHari=jumlahHari;
+        this.pelanggan=pelanggan;
+        this.kamar=kamar;
+        this.tanggalPesan=tanggalPesan;
+    }
+         
     /**
      * Method untuk mendapatkan biaya yang telah diset
      *
