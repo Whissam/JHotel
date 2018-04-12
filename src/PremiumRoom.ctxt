@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PremiumRoom
+comment0.text=\r\n\ Class\ ini\ merupakan\ class\ untuk\ premium\ room\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 15\ Maret\ 2018\r\n
+comment1.params=hotel\ nomor_kamar\ isAvailable\ status_kamar
+comment1.target=PremiumRoom(Hotel,\ java.lang.String,\ boolean,\ StatusKamar)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ PremiumRoom\r\n
+comment2.params=
+comment2.target=TipeKamar\ getTipeKamar()
+comment2.text=\r\n\ Method\ untuk\ mendapatkan\ tpe\ kamar\r\n\r\n\ \r\n\ @return\ \ \ \ TIPE_KAMAR\ type\ TipeKamar\r\n
+comment3.params=
+comment3.target=double\ getDiscount()
+comment3.text=\r\n\ Method\ untuk\ mendapatkan\ discount\r\n\r\n\ \r\n\ @return\ \ \ \ DISCOUNT\ type\ double\r\n
+comment4.params=dailytariff
+comment4.target=void\ setDailyTariff(double)
+comment4.text=\r\n\ Method\ untuk\ mengeset\ tarif\r\n\r\n\ @param\ \ dailytariff\ type\ double\r\n\ \r\n
+numComments=5
