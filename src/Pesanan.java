@@ -31,6 +31,7 @@ public class Pesanan
         this.biaya = jumlahHari * getRoom().getDailyTariff();
         this.tanggalPesan=new GregorianCalendar(year,month,date).getTime();
         this.isAktif=true;
+        this.id=DatabasePesanan.getLastPesananID()+1;
         // initialise instance variables
         
     }

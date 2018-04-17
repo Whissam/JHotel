@@ -14,22 +14,23 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+    SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy");
 
     /**
      * Constructor for objects of class Customer
      */
     
     
-    public Customer (int id, String nama, int year, int month, int date)
+    public Customer (String nama, int year, int month, int date)
     {
-        this.id=id;
+        this.id=DatabaseCustomer.getLastCustomerId()+1;
         this.nama=nama;
         this.dob=new GregorianCalendar(year,month,date).getTime();
     }
     
-     public Customer (int id, String nama,Date dob)
+     public Customer (String nama,Date dob)
     {
-        this.id=id;
+        this.id=DatabaseCustomer.getLastCustomerId()+1;
         this.nama=nama;
         this.dob=dob;
     }
@@ -134,29 +135,23 @@ public class Customer
 
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this)==null)
+        if(DatabasePesanan.getPesananAktif(this)==null)
         {
-            System.out.println("\nCusomter ID : " +id +
-            "\nName: " + nama +
-            "\nEmail: " + email +
-             getDOB());
-             return null;
+            return("\nCustomer ID : " +getID() +
+            "\nName: " + getNama() +
+            "\nEmail: " + getEmail() +
+             "\nDOB = " + df.format(getDOB()));
             }
              else
              {
-             System.out.println("\nCusomter ID : " +id +
-            "\nName: " + nama +
-            "\nEmail: " + email +
-             getDOB() +
-             "Booking order is in progress");
-             return null;
+                 return("\nCustomer ID : " +getID() +
+                         "\nName: " + getNama() +
+                         "\nEmail: " + getEmail() +
+                         "\nDOB = " + df.format(getDOB()) +
+                         "\nBooking order is in progress");
+
             }
-                 
-             
+
     }
 
-    
-
-    
-    
 }

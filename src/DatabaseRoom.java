@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Class ini merupakan class untuk database room
  *
@@ -8,7 +8,8 @@
 public class DatabaseRoom
 {
     // instance variables - replace the example below with your own
-    private String[] list_room;
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
+
 
     /**
      * Constructor for objects of class DatabaseRoom
@@ -22,23 +23,77 @@ public class DatabaseRoom
     /**
      * Method untuk menambahkan kamar ke dalam database
      *
-     * @param  baru type Customer
+     * @param  baru type Room
      * @return    false type boolean
      */
-    public boolean addRoom(Customer baru)
+    public static boolean addRoom(Room baru)
     {
-        // put your code here
-        return false;
+        for(Room k:ROOM_DATABASE){
+        if(k.getHotel().equals(baru.getHotel()) && k.getNomorKamar().compareTo(baru.getNomorKamar())==0)
+        {
+            return false;
+        }
+        else{
+            ROOM_DATABASE.add(baru);
+            return true;
+        }
     }
-    
+    return false;
+    }
+
+
+
+    public static Room getRoom(Hotel hotel, String nomor_kamar)
+    {
+        for(Room k:ROOM_DATABASE){
+            if(k.getHotel().equals(hotel) && k.getNomorKamar().compareTo((nomor_kamar)) == 0)
+            {
+                return k;
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
+    {
+        ArrayList<Room> ArRoom= new ArrayList<Room>();
+        for(Room k:ROOM_DATABASE){
+            if(k.getHotel().equals(hotel))
+            {
+                ArRoom.add(k);
+            }
+        }
+        return ArRoom;
+    }
+
+    public static ArrayList<Room> getVacantRooms()
+    {
+        ArrayList<Room> ArRoom= new ArrayList<Room>();
+        for(Room k:ROOM_DATABASE){
+            if(k.getStatusKamar().equals(StatusKamar.VACANT))
+            {
+                ArRoom.add(k);
+            }
+        }
+        return ArRoom;
+    }
+
     /**
      * Method untuk menghilangkan kamar dari database
      *
      * @param  id type integer
      * @return    false type boolean
      */
-    public boolean removeRoom(int id)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
     {
+        for(Room k:ROOM_DATABASE){
+            if(k.getHotel().equals(hotel) && k.getNomorKamar().compareTo((nomor_kamar)) == 0)
+            {
+                Administrasi.pesananDibatalkan(k);
+                ROOM_DATABASE.remove(k);
+                return true;
+            }
+        }
         return false;
     }
     
@@ -48,9 +103,9 @@ public class DatabaseRoom
      * 
      * @return    list_room type String[]
      */
-    public String[] getRoomDatabase()
+    public static ArrayList<Room> getRoomDatabase()
     {
-        return list_room;
+        return ROOM_DATABASE;
     }
     
 }

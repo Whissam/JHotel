@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>;
-    private int LAST_PESANAN_ID = 0;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
+    private static int LAST_PESANAN_ID = 0;
     /**
      * Constructor for objects of class DatabasePesanan
      */
@@ -26,14 +26,15 @@ public class DatabasePesanan
      * @param  baru type Pesanan
      * @return    false type boolean
      */
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
-        if(baru.getStatusAktif()==true){
-            return false;
+        if(getPesananAktif(baru.getPelanggan())==null){
+            PESANAN_DATABASE.add(baru);
+            LAST_PESANAN_ID = baru.getID();
+            return true;
         }
         else{
-            PESANAN_DATABASE.add(baru);
-            return true;
+            return false;
         }
     }
     
@@ -43,7 +44,7 @@ public class DatabasePesanan
      * @param  baru type Pesanan
      * @return    false type boolean
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         for(Pesanan p : PESANAN_DATABASE)
         {
@@ -129,12 +130,12 @@ public class DatabasePesanan
      * @return    null type String[]
      */
 
-    public ArrayList<Pesanan> getPesananDatabase()
+    public static ArrayList<Pesanan> getPesananDatabase()
     {
         return PESANAN_DATABASE;
     }
 
-    public int getLastPesananID()
+    public static int getLastPesananID()
     {
         return LAST_PESANAN_ID;
     }

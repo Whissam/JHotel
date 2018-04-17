@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Class ini merupakan class yang digunakan untuk menambahkan atau mengurangi
  * list customer
@@ -9,7 +9,8 @@
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private Customer list_customer;
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
+    private static int LAST_CUSTOMER_ID = 0;
 
     /**
      * Method untuk menambahkan customer ke dalam database
@@ -19,8 +20,27 @@ public class DatabaseCustomer
      */
     public static boolean addCustomer(Customer baru)
     {
-        return false;// initialise instance variables
+     for(Customer c: CUSTOMER_DATABASE){
+         if(c.getID() != baru.getID())
+         {
+             CUSTOMER_DATABASE.add(baru);
+             LAST_CUSTOMER_ID = baru.getID();
+             return true;
+         }
+     }
+     return false;
         
+    }
+
+    public static Customer getCustomer(int id)
+    {
+        for(Customer c: CUSTOMER_DATABASE){
+            if(c.getID() == id)
+            {
+                return c;
+            }
+        }
+        return null;
     }
     
     /**
@@ -31,6 +51,19 @@ public class DatabaseCustomer
      */
     public boolean removeCustomer(int id)
     {
+        for(Customer c: CUSTOMER_DATABASE){
+            if(c.getID() == id)
+            {
+                for(Pesanan p: DatabasePesanan.getPesananDatabase()){
+                    if(p.getPelanggan().equals(c))
+                    {
+                        DatabasePesanan.removePesanan(p);
+                    }
+                }
+                CUSTOMER_DATABASE.remove(c);
+                return true;
+            }
+        }
         return false;
     }
     
@@ -40,9 +73,14 @@ public class DatabaseCustomer
      * @return  list_cutomer type Customer
      * 
      */
-    public Customer getCustomerDatabase()
+    public ArrayList<Customer> getCustomerDatabase()
     {
-        return list_customer;
+        return CUSTOMER_DATABASE;
+    }
+
+    public static int getLastCustomerId()
+    {
+        return LAST_CUSTOMER_ID;
     }
 
 }
