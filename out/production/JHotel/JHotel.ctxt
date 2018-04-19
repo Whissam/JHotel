@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=JHotel
+comment0.text=\r\n\ Class\ ini\ merupakan\ Main\ Class\ dari\ keseluruhan\ program.\r\n\r\n\ @author\ Whisnu\ Samudra\r\n\ @version\ 1\ Maret\ 2018\r\n
+comment1.params=
+comment1.target=JHotel()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ JHotel\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Method\ \ main\ untuk\ menjalankan\ fungsi-fungsi\r\n\r\n\ @param\ \ args\ type\ String[]\r\n\ \r\n
+numComments=3

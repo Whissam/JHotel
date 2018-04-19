@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 
 /**
@@ -6,8 +8,7 @@ import java.util.ArrayList;
  * @author Whisnu Samudra
  * @version 9 Maret 2018
  */
-public class DatabaseHotel
-{
+public class DatabaseHotel {
     // instance variables - replace the example below with your own
     private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
     private static int LAST_HOTEL_ID = 0;
@@ -15,76 +16,66 @@ public class DatabaseHotel
     /**
      * Constructor for objects of class DatabaseHotel
      */
-    public DatabaseHotel()
-    {
+    public DatabaseHotel() {
         // initialise instance variables
-        
+
     }
 
-    public static int getLastHotelID()
-    {
+    public static ArrayList<Hotel> getHotelDatabase() {
+        return HOTEL_DATABASE;
+    }
+
+    public static Hotel getHotel(int id) {
+        for (Hotel h : HOTEL_DATABASE) {
+            if (h.getId() == id) {
+                return h;
+            }
+        }
+        return null;
+    }
+
+    public static int getLastHotelID() {
         return LAST_HOTEL_ID;
     }
 
     /**
      * Method untuk menambahkan hotel ke dalam database
      *
-     * @param  baru type Hotel
-     * @return    false type boolean
+     * @param baru type Hotel
+     * @return false type boolean
      */
-    public boolean addHotel(Hotel baru)
-    {
-        for(Hotel h:HOTEL_DATABASE){
-            if(h.getId() != baru.getId())
-            {
-                HOTEL_DATABASE.add(baru);
-                LAST_HOTEL_ID = baru.getId();
-                return true;
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException {
+        for (Hotel h : HOTEL_DATABASE) {
+            if (h.getId() == baru.getId() || h.getNama() == baru.getNama() && h.getLokasi().equals(baru.getLokasi())) {
+                throw new HotelSudahAdaException(h);
             }
         }
-        return false;
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getId();
+        return true;
     }
-    
+
     /**
      * Method untuk menghilangkan hotel dari database
      *
-     * @param  id type integer
-     * @return    false type boolean
+     * @param id type integer
+     * @return false type boolean
      */
-    public boolean removeHotel(int id) {
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException {
         for (Hotel h : HOTEL_DATABASE) {
             if (h.getId() != id) {
                 for (Room k : DatabaseRoom.getRoomsFromHotel(h)) {
-                    DatabaseRoom.removeRoom(h, k.getNomorKamar());
-
+                    try {
+                        DatabaseRoom.removeRoom(h, k.getNomorKamar());
+                    } catch (RoomTidakDitemukanException e) {
+                    }
+                    HOTEL_DATABASE.remove(h);
+                    return true;
                 }
-                HOTEL_DATABASE.remove(h);
-                return true;
-            }
 
-        }
-        return false;
-    }
-    
-    /**
-     * Method untuk mendapatkan hotel pada database
-     *
-     * 
-     * @return    list_hotel type String[]
-     */
-    public ArrayList<Hotel> getHotelDatabase()
-    {
-        return HOTEL_DATABASE;
-    }
-
-    public static Hotel getHotel(int id)
-    {
-        for(Hotel h:HOTEL_DATABASE){
-            if(h.getId() == id)
-            {
-                return h;
             }
         }
-        return null;
+        throw new HotelTidakDitemukanException(id);
     }
 }
+

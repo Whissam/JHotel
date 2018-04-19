@@ -21,18 +21,20 @@ public class Customer
      */
     
     
-    public Customer (String nama, int year, int month, int date)
+    public Customer (String nama, int year, int month, int date, String email)
     {
         this.id=DatabaseCustomer.getLastCustomerId()+1;
         this.nama=nama;
         this.dob=new GregorianCalendar(year,month,date).getTime();
+        this.email=email;
     }
     
-     public Customer (String nama,Date dob)
+     public Customer (String nama,Date dob, String email)
     {
         this.id=DatabaseCustomer.getLastCustomerId()+1;
         this.nama=nama;
         this.dob=dob;
+        this.email=email;
     }
     
     /**

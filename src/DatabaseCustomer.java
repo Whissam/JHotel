@@ -18,18 +18,18 @@ public class DatabaseCustomer
      * @param  baru type Customer
      * 
      */
-    public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
      for(Customer c: CUSTOMER_DATABASE){
-         if(c.getID() != baru.getID())
+         if(c.getID() == baru.getID() || c.getEmail().compareTo(baru.getEmail())==0)
          {
-             CUSTOMER_DATABASE.add(baru);
-             LAST_CUSTOMER_ID = baru.getID();
-             return true;
+             throw new PelangganSudahAdaException(baru);
          }
+
      }
-     return false;
-        
+        CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID = baru.getID();
+        return true;
     }
 
     public static Customer getCustomer(int id)
@@ -49,7 +49,7 @@ public class DatabaseCustomer
      * @param  id type integer
      * 
      */
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {
         for(Customer c: CUSTOMER_DATABASE){
             if(c.getID() == id)
@@ -57,14 +57,20 @@ public class DatabaseCustomer
                 for(Pesanan p: DatabasePesanan.getPesananDatabase()){
                     if(p.getPelanggan().equals(c))
                     {
-                        DatabasePesanan.removePesanan(p);
+                       try{
+                           DatabasePesanan.removePesanan(p);
+                       }
+                       catch(PesananTidakDitemukanException e)
+                       {
+
+                       }
                     }
                 }
                 CUSTOMER_DATABASE.remove(c);
                 return true;
             }
         }
-        return false;
+        throw new PelangganTidakDitemukanException(id);
     }
     
     /**
@@ -73,7 +79,7 @@ public class DatabaseCustomer
      * @return  list_cutomer type Customer
      * 
      */
-    public ArrayList<Customer> getCustomerDatabase()
+    public static ArrayList<Customer> getCustomerDatabase()
     {
         return CUSTOMER_DATABASE;
     }

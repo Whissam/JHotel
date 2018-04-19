@@ -1,4 +1,6 @@
 
+
+
 /**
  * Class ini merupakan class untuk proses administrasi
  *
@@ -46,10 +48,12 @@ public class Administrasi
     public static void pesananDibatalkan(Room kamar)
     {
         Pesanan pesan = DatabasePesanan.getPesanan(kamar);
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(false);
-        pesan.setStatusAktif(false);
-        pesan.setRoom(null);
+        if(pesan!=null) {
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(false);
+            pesan.setStatusAktif(false);
+            pesan.setRoom(null);
+        }
         DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
 
     }

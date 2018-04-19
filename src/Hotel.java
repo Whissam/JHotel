@@ -1,4 +1,6 @@
 
+
+
 /**
  * Class ini merupakan class untuk mengeset informasi tentang hotel seperti
  * nama, lokasi, dan bintang

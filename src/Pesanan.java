@@ -1,5 +1,6 @@
 import java.util.*;
 import java.text.*;
+
 /**
  * Class ini merupakan Class yang digunakan untuk melihat status pesanan
  * dan juga mengeset pesanan
@@ -24,25 +25,17 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, boolean isAktif, int year, int month, int date)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {
         this.jumlahHari=jumlahHari;
         this.pelanggan=pelanggan;
-        this.biaya = jumlahHari * getRoom().getDailyTariff();
-        this.tanggalPesan=new GregorianCalendar(year,month,date).getTime();
+//        this.biaya = jumlahHari * getRoom().getDailyTariff();
         this.isAktif=true;
         this.id=DatabasePesanan.getLastPesananID()+1;
         // initialise instance variables
         
     }
-     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,Date tanggalPesan, boolean isAktif)
-     {
-        this.jumlahHari=jumlahHari;
-        this.pelanggan=pelanggan;
-        this.kamar=kamar;
-        this.tanggalPesan=tanggalPesan;
-        this.isAktif=isAktif;
-    }
+
          
     /**
      * Method untuk mendapatkan biaya yang telah diset
@@ -125,7 +118,7 @@ public class Pesanan
     /**
      * Method  untuk mengeset biaya
      *
-     * @param  biaya type double
+     * @param
      * 
      */
 
@@ -181,7 +174,7 @@ public class Pesanan
     /**
      * Method untuk mengeset status selesai
      *
-     * @param  diproses type boolean
+     * @param
      * 
      */
     public void setStatusSelesai(boolean selesai)
@@ -227,17 +220,20 @@ public class Pesanan
         this.isAktif=isAktif;
     }
 
-    public String toString()
-    {
+    public String toString() {
         String final_status = "KOSONG";
-        if(isDiproses == true && isSelesai == false) final_status = "DIPROSES";
-        else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
-        else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
-        
-        return "Dibuat oleh " + getPelanggan().getNama()
-            + ". Proses booking untuk " + getRoom().getHotel().getNama()
-            + "kamar nomor " + getRoom().getNomorKamar()
-            + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
-            + ". Status: " + final_status + ".";
+        if (isDiproses == true && isSelesai == false) final_status = "DIPROSES";
+        else if (isDiproses == false && isSelesai == false) final_status = "KOSONG";
+        else if (isDiproses == false && isSelesai == true) final_status = "SELESAI";
+        if (kamar != null) {
+            return "Dibuat oleh " + getPelanggan().getNama()
+                    + ". Proses booking untuk " + getRoom().getHotel().getNama()
+                    + "kamar nomor " + getRoom().getNomorKamar()
+                    + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
+                    + ". Status: " + final_status + ".";
+        } else {
+            return "Dibuat oleh " + getPelanggan().getNama()
+                    + ". Status: " + final_status + ".";
         }
+    }
 }

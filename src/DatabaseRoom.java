@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 /**
  * Class ini merupakan class untuk database room
@@ -26,19 +28,20 @@ public class DatabaseRoom
      * @param  baru type Room
      * @return    false type boolean
      */
-    public static boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
+        if(baru.getHotel() != null){
         for(Room k:ROOM_DATABASE){
-        if(k.getHotel().equals(baru.getHotel()) && k.getNomorKamar().compareTo(baru.getNomorKamar())==0)
-        {
-            return false;
+        if(k.getHotel().equals(baru.getHotel()) ){
+            if(k.getNomorKamar().compareTo(baru.getNomorKamar())==0){
+                throw new RoomSudahAdaException(baru);
+            }
         }
-        else{
+        }
             ROOM_DATABASE.add(baru);
             return true;
-        }
     }
-    return false;
+    else return false;
     }
 
 
@@ -81,10 +84,10 @@ public class DatabaseRoom
     /**
      * Method untuk menghilangkan kamar dari database
      *
-     * @param  id type integer
+     * @param
      * @return    false type boolean
      */
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
         for(Room k:ROOM_DATABASE){
             if(k.getHotel().equals(hotel) && k.getNomorKamar().compareTo((nomor_kamar)) == 0)
@@ -94,7 +97,7 @@ public class DatabaseRoom
                 return true;
             }
         }
-        return false;
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
     }
     
     /**
