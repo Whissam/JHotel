@@ -35,14 +35,16 @@ public class JHotel
      */
     public static void main(String[] args) throws RoomSudahAdaException, HotelSudahAdaException {
 
-        SpringApplication.run(JHotel.class, args);
+
+
+        DatabaseHotel.addHotel(new Hotel("Tes",new Lokasi(12,13,"FTUI"), 5));
+        DatabaseHotel.addHotel(new Hotel("Tes1",new Lokasi(13,14,"DTE"), 5));
 
         DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "Satu"));
         DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "Dua"));
         DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(3), "Tiga"));
 
-        DatabaseHotel.addHotel(new Hotel("Tes",new Lokasi(12,13,"FTUI"), 5));
-        DatabaseHotel.addHotel(new Hotel("Tes1",new Lokasi(13,14,"DTE"), 5));
+        SpringApplication.run(JHotel.class, args);
 
 
         /*

@@ -1,11 +1,8 @@
 package jhotel;
 
 
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
@@ -20,8 +17,8 @@ public class RoomController {
     }
 
     @RequestMapping(value = "/room/{id_hotel}/{room_no}", method = RequestMethod.GET)
-    public Room getRoom(@RequestParam(value = "id_hotel") int id_hotel, @RequestParam(value = "nomor_kamar") String nomor_kamar) {
-        Room room = DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel), nomor_kamar);
+    public Room getRoom(@PathVariable int id_hotel, @PathVariable String room_no) {
+        Room room = DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel), room_no);
         return room;
     }
 }

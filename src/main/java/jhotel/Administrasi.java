@@ -84,9 +84,10 @@ public class Administrasi
      */
     public static void pesananDibatalkan(Pesanan pesan)
     {
-        DatabaseRoom.getRoom(pesan.getRoom().getHotel(), pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
+
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(), pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
         pesan.setStatusAktif(false);
 
     }

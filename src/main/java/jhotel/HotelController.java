@@ -1,10 +1,7 @@
 package jhotel;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -19,7 +16,7 @@ public class HotelController {
     }
 
     @RequestMapping(value="/hotel/{id_hotel}", method = RequestMethod.GET)
-    public Hotel getHotel(@RequestParam (value="id_hotel") int id_hotel)
+    public Hotel getHotel(@PathVariable(value="id_hotel") int id_hotel)
     {
         Hotel hotel = DatabaseHotel.getHotel(id_hotel);
         return hotel;
