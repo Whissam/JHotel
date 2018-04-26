@@ -12,10 +12,11 @@ import java.util.regex.*;
 public class Customer
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy");
 
     /**
@@ -23,12 +24,13 @@ public class Customer
      */
     
     
-    public Customer (String nama, int year, int month, int date, String email)
+    public Customer (String nama, int year, int month, int date, String email, String password)
     {
         this.id=DatabaseCustomer.getLastCustomerId()+1;
         this.nama=nama;
         this.dob=new GregorianCalendar(year,month,date).getTime();
         this.email=email;
+        this.password=password;
     }
     
      public Customer (String nama,Date dob, String email)
@@ -83,6 +85,11 @@ public class Customer
        System.out.println("DOB: " + dateFormat.format(dob));
        return dob;
     }
+
+    public String getPassword()
+    {
+        return password;
+    }
     
     /**
      * Method untuk mengeset ID
@@ -117,6 +124,11 @@ public class Customer
         Pattern ptr = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         System.out.println(email + " is " + (ptr.matcher(email).matches() ? "valid" : "invalid"));
     
+    }
+
+    public void setPassword(String password)
+    {
+        this.password=password;
     }
     
     /**
