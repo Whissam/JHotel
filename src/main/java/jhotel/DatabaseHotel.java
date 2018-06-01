@@ -23,10 +23,22 @@ public class DatabaseHotel {
 
     }
 
+    /**
+     * Method untuk mengambil data Hotel dari database
+     *
+     *
+     * @return HOTEL_DATABASE type ArrayList<Hotel>
+     */
     public static ArrayList<Hotel> getHotelDatabase() {
         return HOTEL_DATABASE;
     }
 
+    /**
+     * Method untuk mengambil data Hotel
+     *
+     * @param id type int
+     * @return null
+     */
     public static Hotel getHotel(int id) {
         for (Hotel h : HOTEL_DATABASE) {
             if (h.getId() == id) {
@@ -35,7 +47,12 @@ public class DatabaseHotel {
         }
         return null;
     }
-
+    /**
+     * Method untuk mengambil id hotel terakhir
+     *
+     *
+     * @return LAST_HOTEL_ID type int
+     */
     public static int getLastHotelID() {
         return LAST_HOTEL_ID;
     }
@@ -44,7 +61,7 @@ public class DatabaseHotel {
      * Method untuk menambahkan hotel ke dalam database
      *
      * @param baru type Hotel
-     * @return false type boolean
+     * @return true type boolean
      */
     public static boolean addHotel(Hotel baru) throws HotelSudahAdaException {
         for (Hotel h : HOTEL_DATABASE) {
@@ -61,7 +78,7 @@ public class DatabaseHotel {
      * Method untuk menghilangkan hotel dari database
      *
      * @param id type integer
-     * @return false type boolean
+     * @return true type boolean
      */
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException {
         for (Hotel h : HOTEL_DATABASE) {

@@ -38,7 +38,6 @@ public class JHotel
 
 
         DatabaseHotel.addHotel(new Hotel("Tes",new Lokasi(12,13,"FTUI"), 5));
-        DatabaseHotel.addHotel(new Hotel("Tes1",new Lokasi(13,14,"DTE"), 5));
 
         DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "Satu"));
         DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "Dua"));

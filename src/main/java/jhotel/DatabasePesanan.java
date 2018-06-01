@@ -3,9 +3,10 @@ package jhotel;
 import java.util.ArrayList;
 
 /**
- * Class Database Pesanan Tugas OOP Praktikum Case Study
+ * Class ini merupakan class yang digunakan untuk mengambil data atau mengurangi
+ *  * list pesanan
  *
- * @author Rizky Ramadian Wijaya
+ * @author Whisnu Samudra
  * @version 1/3/2018
  */
 public class DatabasePesanan
